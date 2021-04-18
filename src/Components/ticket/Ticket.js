@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {readTicket} from '../../redux/reducers/ticketReducer';
+import Comment from './Comment';
 // import {useHistory} from 'react-router-dom';
 import '../../stylesheets/Ticket.css';
 
@@ -43,6 +44,9 @@ const Ticket = (props) => {
             <span className='closeTicket' onClick={handleClick} >&#8678;</span>
             </div>
         : null }
+        <div>
+            <Comment />
+        </div>
         </div>
     )
 };

@@ -3,7 +3,7 @@ import {getUserTickets, readTicket} from '../../redux/reducers/ticketReducer';
 import {connect}  from 'react-redux';
 import Ticket from './Ticket';
 import axios from 'axios';
-import  '../../stylesheets/sidebar.css';
+import  '../../stylesheets/userSidebar.css';
 
 const UserTickets = (props) => {
     const [tickets, setTickets] = useState([{

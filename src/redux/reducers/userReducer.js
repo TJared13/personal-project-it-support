@@ -5,6 +5,14 @@ const initialState = {
 const REGISTER_USER = 'REGISTER_USER';
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT_USER = 'LOGOUT_USER';
+const GET_USER = 'GET_USER';
+
+export function getUser(user){
+    return {
+        type: GET_USER,
+        payload: user
+    }
+}
 
 export function updateUser(user){
     return {
@@ -31,6 +39,11 @@ export function logoutUser(){
 export default function reducer(state = initialState, action) {
     switch(action.type){
         case REGISTER_USER:
+            return {
+                ...state,
+                ...action.payload
+            }
+        case GET_USER:
             return {
                 ...state,
                 ...action.payload

@@ -9,6 +9,10 @@ const adminCtrl = require('./controllers/adminController');
 const auth = require('./middleware/authMiddleware');
 const app = express();
 
+//socket io
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+
 app.use(express.json());
 app.use(session({
     saveUninitialized: true,
@@ -18,6 +22,15 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 * 4
     }
 }));
+
+//socket io
+io.on('connection', socket => {
+    socket.on('message', ({username, message}) => {
+        io.emit('message', {username, message})
+    })
+});
+
+http.listen(3132, console.log('listening on port 3132'))
 
 // USER LOGIN/REGISTRATION ENDPOINTS
 app.post('/auth/register', authCtrl.register)

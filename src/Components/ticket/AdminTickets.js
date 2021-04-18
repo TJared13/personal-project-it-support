@@ -4,7 +4,7 @@ import {connect}  from 'react-redux';
 import Ticket from './Ticket';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import  '../../stylesheets/sidebar.css';
+import  '../../stylesheets/adminSideBar.css';
 
 const AdminTickets = (props) => {
     const [tickets, setTickets] = useState([{
@@ -37,8 +37,8 @@ const AdminTickets = (props) => {
             <span className='title'>TICKETS</span>
             {
                 tickets.map(t => { 
-                        return ( 
-                            <div>
+                    return ( 
+                        <div>
 
                                 <div className='ticketList'>
                                 {/* <button onClick={() => onButtonClick(t.ticket_id)} className='ticketItems'  > */}
