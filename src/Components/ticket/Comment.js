@@ -37,7 +37,7 @@ function Comment(props) {
       }
 
     return (
-        <div>
+        <div className='card'>
         <form onSubmit={onMessageSubmit}>
             <h1>Messenger</h1>
             <div className='name-field'>

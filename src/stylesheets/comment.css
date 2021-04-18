@@ -1,18 +1,16 @@
+
+
 .card {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: 30px;
   min-height: 30rem;
 }
-
 form {
   max-width: 350px;
   border-radius: 5px;
   padding: 20px;
-  -webkit-box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
 }
 
 .name-field {
@@ -22,7 +20,7 @@ form {
 button {
   margin-top: 20px;
   padding: 10px;
-  background: white;
+  background: transparent;
   border-radius: 5px;
 }
 
@@ -30,8 +28,7 @@ button {
   max-width: 350px;
   border-radius: 5px;
   padding: 20px;
-  -webkit-box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
 }
 
 h3 {
@@ -39,6 +36,5 @@ h3 {
 }
 
 span {
-  color: white;
+  color: black;
 }
-/*# sourceMappingURL=comment.css.map */
