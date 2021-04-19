@@ -8,7 +8,7 @@ import '../../stylesheets/comment.css';
 const socket = io.connect('http://localhost:3132');
 
 function Comment(props) {
-    const [state, setState] = useState({username: '', message: '',})
+    const [state, setState] = useState({username: props.username, message: '',})
     const [comment, setComment] = useState([])
 
     useEffect(() => {
@@ -37,14 +37,14 @@ function Comment(props) {
       }
 
     return (
-        <div className='card'>
-        <form onSubmit={onMessageSubmit}>
-            <h1>Messenger</h1>
+        <div className='card' >
+            {/* <h1>Messenger</h1> */}
+        <form onSubmit={onMessageSubmit} className='form'>
             <div className='name-field'>
-            <TextField name='name' onChange={e => onTextChange(e)} value={state.name} label="Name" />
+            <span name='name' onChange={e => onTextChange(e)} value={() => props.getUser()} label="Name">{props.username}</span>
             </div>
             <div>
-            <TextField name='message' onChange={e => onTextChange(e)} value={state.message} label="Message" id="outlined-multiline-static" variant='outlined' />
+            <textarea name='message' onChange={e => onTextChange(e)} value={state.message} label="Message" id="outlined-multiline-static" variant='outlined' />
             </div>
             <button>Send Message</button>
         </form>

@@ -51,6 +51,7 @@ class Auth extends Component {
             <div className='loginWrapper' >
                 <form>
                     <h1>Welcome!</h1>
+                    <img  />
                     <div>
                         <label>Username</label>
                         <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />

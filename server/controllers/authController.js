@@ -41,11 +41,21 @@ module.exports = {
         if (!isAuthenticated){
             return res.status(401).send('Incorrect password')
         }
-
-        // req.session.user =  {isAdmin: existingUser.is_admin, id: existingUser.id, username: existingUser.username}
         req.session.user =  existingUser
         delete req.session.user.password
         res.status(200).send(req.session.user)
+    },
+
+    updateProfile: async (req, res) => {
+        const db = req.app.get('db');
+        const {username, password, first_name, last_name, birthday, email, phone_number, is_admin} = req.body;
+        const phoneNumber = parseInt(phone_number);
+
+        const[updateProfile] = await db.user.update_profile(username, password, first_name, last_name, birthday, email, phoneNumber, is_admin)
+        
+        req.session.user = updateProfile;
+        
+        res.status(200).send(updateProfile)
     },
 
     logout: (req, res) => {
@@ -55,7 +65,7 @@ module.exports = {
 
     getUser: async (req, res) => {
         if (req.session.user) {
-            res.status(200).send(req.session.user)
+           return res.status(200).send(req.session.user)
         }
         res.status(400).send('ERROR 404: No session found')
     },

@@ -90,7 +90,7 @@ h1 {
   overflow: scroll;
 }
 
-input, button, .logout, .register {
+input, button, .register {
   border: 0;
   background: none;
   display: block;
@@ -106,27 +106,6 @@ input, button, .logout, .register {
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
-
-.logout {
-  position: absolute;
-  right: 5vw;
-  top: 3vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  text-align: center;
-  align-content: center;
-  border: 2px solid #2ecc71;
-  padding: 14px 10px;
-  width: 200px;
-  outline: none;
-  color: white;
-  border-radius: 24px;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-}
-
 
 .newTicket {
   position: absolute;
@@ -147,6 +126,9 @@ input, button, .logout, .register {
   transition: 0.25s;
 }
 
+
+
+
 .back {
   position: absolute;
   top: 0.5vh;
@@ -166,7 +148,7 @@ input, button, .logout, .register {
   transition: 0.25s;
 }
 
-input:hover, button:hover, .logout:hover, .register:hover {
+input:hover, button:hover, .register:hover {
   width: 280px;
   border-color: #3498db;
 }
@@ -175,12 +157,6 @@ input:hover, button:hover, .logout:hover, .register:hover {
   width: 3.5rem;
   height: 3.5rem;
 }
-
-.logout:hover {
-  width: 6rem;
-  border-color: #3498db;
-}
-
 
 .register {
   text-decoration: none;

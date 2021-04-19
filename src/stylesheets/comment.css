@@ -1,40 +1,64 @@
-
-
 .card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 30px;
-  min-height: 30rem;
-}
-form {
-  max-width: 350px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
-}
+    position: fixed;
+    top: 52vh;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    min-height: 30rem;
+    box-sizing: border-box;
+  }
+  form.form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 10vh;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: lightgray;
+    box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+    margin-bottom: 40px;
+  }
 
-.name-field {
-  margin-bottom: 40px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px;
-  background: transparent;
-  border-radius: 5px;
-}
-
-.render-chat {
-  max-width: 350px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
-}
-
-h3 {
-  color: #2f72da;
-}
-
-span {
-  color: black;
-}
+  textarea {
+      width: 30vw;
+      height: 8vh;
+      overflow: scroll;
+  }
+  
+  .name-field {
+    margin-bottom: 40px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    background: blue;
+    border-radius: 5px;
+  }
+  
+  .render-chat {
+    position: absolute;
+    top: 11vh;
+    width: 50vw;
+    height: 25vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(172, 172, 172, 0.3);
+    border: 2px solid #8f8f8f;
+    border-radius: 2px;
+    box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  h3 {
+    color: #2f72da;
+  }
+  
+  span {
+    color: black;
+  }

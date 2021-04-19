@@ -35,7 +35,8 @@ http.listen(3132, console.log('listening on port 3132'))
 // USER LOGIN/REGISTRATION ENDPOINTS
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
-app.get('/auth/session', authCtrl.getUser) //, ticketCtrl.getUserTickets)
+app.get('/auth/session', authCtrl.getUser)
+app.put('/user/profile', authCtrl.updateProfile)
 app.get('/auth/logout', authCtrl.logout)
 
 
