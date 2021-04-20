@@ -8,6 +8,7 @@ import {getUser} from '../redux/reducers/userReducer';
 import '../stylesheets/dash.css';
 import '../stylesheets/userDropdown.css';
 import NewTicket from './ticket/NewTicket';
+import Header from './Header';
 
 const Dashboard = (props) => {
     // const [ticket, setTicket] = useState();
@@ -20,7 +21,6 @@ const Dashboard = (props) => {
             .then((res) => {
                 setUser(res.data)
                 props.getUser(res.data.user_id)
-                console.log(res.data.user_id)
             })
             .catch(err => console.log(err))
     }, [])
@@ -51,6 +51,7 @@ const Dashboard = (props) => {
                     : null 
                     }
                 </div>
+                {/* <Header /> */}
                 <div className='userTickets' >
                     <UserTickets />         
                 </div>

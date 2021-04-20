@@ -26,7 +26,7 @@ class Auth extends Component {
         e.preventDefault();
         axios.post('/auth/login', this.state)
             .then(res => {
-                // this.props.history.push('/user/dash')
+                
                 this.props.updateUser({username: res.data.username, id: res.data.user_id, isAdmin: res.data.is_admin})
 
                 this.props.user.user.isAdmin ? this.props.history.push('/admin/dash') : this.props.history.push('/user/dash') 
@@ -51,7 +51,6 @@ class Auth extends Component {
             <div className='loginWrapper' >
                 <form>
                     <h1>Welcome!</h1>
-                    <img  />
                     <div>
                         <label>Username</label>
                         <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />

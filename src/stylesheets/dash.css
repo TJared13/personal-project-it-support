@@ -91,7 +91,6 @@ h1 {
 }
 
 input, button, .register {
-  border: 0;
   background: none;
   display: block;
   margin: 20px auto;

@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {createTicket} from '../../redux/reducers/ticketReducer';
-import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 
 const NewTicket = (props) => {
-    const history = useHistory();
     const [data, setData] = useState({
         id: null,
         date: null,
@@ -24,7 +22,7 @@ const NewTicket = (props) => {
         console.log(props)
         const {id} = props;
         const data1 = {id: id, date: data.date, title: data.title, category: data.category, description: data.description, media: data.media};
-        axios.post('/user/api/ticket/new', data1)
+        axios.post('/user/ticket/new', data1)
             .then(res => {
 
                 props.createTicket({date: res.data.date, title: res.data.title, category: res.data.category, description: res.data.description, media: res.data.media})

@@ -5,6 +5,7 @@
     flex-direction: column;
     margin: 30px;
     min-height: 30rem;
+    width: 50vw;
     box-sizing: border-box;
   }
   .commentForm {
@@ -15,11 +16,11 @@
     align-items: center;
     width: 50vw;
     height: 10vh;
-    border-radius: 5px;
     padding: 20px;
-    background-color: lightgray;
+    background-color: rgba(172, 172, 172, 0.3);
+    border: 2px solid #8f8f8f;
+    border-radius: 2px;
     box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
-    margin-bottom: 40px;
   }
 
   textarea {
@@ -46,19 +47,60 @@
     height: 25vh;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     border-radius: 5px;
     padding: 20px;
     background-color: rgba(172, 172, 172, 0.3);
     border: 2px solid #8f8f8f;
     border-radius: 2px;
     box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+    overflow: scroll;
+  }
+
+  .messages {
+    position: relative;
+    width: 47vw;
+    margin: 5px 0px;
+    padding: 5px;
+    background-color: rgba(172, 172, 172, 0.3);
+    border: 2px solid #8f8f8f;
+    border-radius: 2px;
+    box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .chatTitle {
+      width: 45vw;
+      padding-bottom: 6px;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid rgb(27, 27, 27);
   }
   
   h3 {
-    color: #2f72da;
+    color: #00ffd5;
   }
   
   span {
-    color: black;
+    color: white;
+  }
+  .submit {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    align-content: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+  
+  }
+  .submit:hover {
+      border-color: #3498db;
+      width: 200px;
   }

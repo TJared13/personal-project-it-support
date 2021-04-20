@@ -10,3 +10,22 @@ profile_pic VARCHAR(3000),
 phone_number INTEGER,
 is_admin BOOLEAN
 );
+
+CREATE TABLE user_ticket (
+ticket_id SERIAL PRIMARY KEY,
+user_id SERIAL REFERENCES user_info(user_id),
+date DATE NOT NULL,
+title VARCHAR(255) NOT NULL,
+category VARCHAR(255) NOT NULL,
+description VARCHAR(5000) NOT NULL,
+is_open BOOLEAN DEFAULT FALSE NOT NULL,
+media VARCHAR(3000)
+);
+
+CREATE TABLE ticket_comment (
+comment_id SERIAL PRIMARY KEY,
+user_id SERIAL REFERENCES user_info(user_id),
+ticket_id SERIAL REFERENCES user_ticket(ticket_id),
+date DATE NOT NULL,
+comment VARCHAR(3000) NOT NULL
+);
