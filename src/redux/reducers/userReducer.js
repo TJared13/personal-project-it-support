@@ -51,7 +51,7 @@ export default function reducer(state = initialState, action) {
         case UPDATE_USER:
             return {
                 ...state,
-                user: action.payload
+                ...action.payload
             }
         case LOGOUT_USER:
                 return {

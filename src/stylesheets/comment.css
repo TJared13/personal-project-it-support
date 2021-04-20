@@ -7,7 +7,7 @@
     min-height: 30rem;
     box-sizing: border-box;
   }
-  form.form {
+  .commentForm {
     position: relative;
     display: flex;
     flex-direction: row;

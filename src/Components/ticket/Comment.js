@@ -4,11 +4,12 @@ import TextField from '@material-ui/core/TextField';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/reducers/userReducer';
 import '../../stylesheets/comment.css';
+import axios from 'axios';
 
 const socket = io.connect('http://localhost:3132');
 
 function Comment(props) {
-    const [state, setState] = useState({username: props.username, message: '',})
+    const [state, setState] = useState({username: '', message: '',})
     const [comment, setComment] = useState([])
 
     useEffect(() => {
@@ -39,7 +40,7 @@ function Comment(props) {
     return (
         <div className='card' >
             {/* <h1>Messenger</h1> */}
-        <form onSubmit={onMessageSubmit} className='form'>
+        <form onSubmit={onMessageSubmit} className='commentForm'>
             <div className='name-field'>
             <span name='name' onChange={e => onTextChange(e)} value={() => props.getUser()} label="Name">{props.username}</span>
             </div>

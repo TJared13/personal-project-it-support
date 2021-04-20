@@ -48,14 +48,15 @@ module.exports = {
 
     updateProfile: async (req, res) => {
         const db = req.app.get('db');
-        const {username, password, first_name, last_name, birthday, email, phone_number, is_admin} = req.body;
+        const {first_name, last_name, birthday, email, phone_number, username} = req.body;
         const phoneNumber = parseInt(phone_number);
 
-        const[updateProfile] = await db.user.update_profile(username, password, first_name, last_name, birthday, email, phoneNumber, is_admin)
+        const[updateProfile] = await db.user.update_profile(first_name, last_name, birthday, email, phoneNumber, username)
         
         req.session.user = updateProfile;
         
-        res.status(200).send(updateProfile)
+        res.status(200).send(req.session.user)
+        console.log(req.session.user)
     },
 
     logout: (req, res) => {
