@@ -16,7 +16,7 @@ const UpdateProfile = (props) => {
         phone_number: ''
     })
 
-    useEffect(() => {
+    useEffect((props) => {
         axios.get('/auth/session')
             .then((res) => {
                 setData(res.data)
@@ -26,9 +26,10 @@ const UpdateProfile = (props) => {
             .catch(err => console.log(err))
     }, [])
 
-    function register(e){
+    function updateUser(e){
         e.preventDefault();
         const data1 = { first_name: data.first_name, last_name: data.last_name, birthday: data.birthday, email: data.email, phone_number: data.phone_number, username: data.username}
+        console.log(data1)
 
         axios.put('/user/profile', data1)
             .then (res => {
@@ -53,7 +54,7 @@ const UpdateProfile = (props) => {
                 <input type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
                 <input type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
                 <input type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
-                <button type='submit' onClick={(e) => register(e)}>Submit</button>
+                <button type='submit' onClick={(e) => updateUser(e)}>Submit</button>
             </form>
         </div>
     )

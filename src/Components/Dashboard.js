@@ -40,7 +40,7 @@ const Dashboard = (props) => {
         <div className='mainContain' > 
             <div className='dashContain' >
                 <div className='header' id='img' >                    
-                    <h1>WELCOME {user.username}!</h1>
+                    <h1>WELCOME {user?.username}!</h1>
                     <img src={userIcon} alt='user icon' className='userOptions' onClick={() => setViewOptions(!viewOptions)}/>                      
                     { viewOptions ?
                     <div className='optionContain'>                        
