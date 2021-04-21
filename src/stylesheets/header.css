@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+h1 {
+  /* position: relative; */
+  margin-bottom: 35px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header {
+  position: absolute;
+  top: 5vh;
+  background-color: rgba(255, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  height: 12vh;
+  padding: 40px 60px;
+  margin-bottom: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+}
+
+.logout {
+  width: 5rem;
+  height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=dash.css.map */

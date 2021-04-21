@@ -6,7 +6,6 @@ import UserTickets from './ticket/UserTickets';
 import userIcon from '../images/user_icon.png';
 import {getUser} from '../redux/reducers/userReducer';
 import '../stylesheets/dash.css';
-import '../stylesheets/userDropdown.css';
 import NewTicket from './ticket/NewTicket';
 import Header from './Header';
 
@@ -39,7 +38,7 @@ const Dashboard = (props) => {
     return (
         <div className='mainContain' > 
             <div className='dashContain' >
-                <div className='header' id='img' >                    
+                {/* <div className='header' id='img' >                    
                     <h1>WELCOME {user?.username}!</h1>
                     <img src={userIcon} alt='user icon' className='userOptions' onClick={() => setViewOptions(!viewOptions)}/>                      
                     { viewOptions ?
@@ -50,8 +49,8 @@ const Dashboard = (props) => {
                     
                     : null 
                     }
-                </div>
-                {/* <Header /> */}
+                </div> */}
+                <Header />
                 <div className='userTickets' >
                     <UserTickets />         
                 </div>

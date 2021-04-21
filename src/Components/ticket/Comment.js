@@ -39,9 +39,7 @@ function Comment(props) {
     })
 
     const onTextChange = e => {
-        console.log(e.target.name, e.target.value, data)
-        setData({...data, [e.target.name]: e.target.value})
-        
+        setData({...data, [e.target.name]: e.target.value})        
       }
 
     const onMessageSubmit = (e) => {

@@ -8,6 +8,7 @@ const ticketCtrl = require('./controllers/ticketController');
 const commentCtrl = require('./controllers/commentController');
 const adminCtrl = require('./controllers/adminController');
 const auth = require('./middleware/authMiddleware');
+const path = require('path');
 const app = express();
 
 //socket io
@@ -23,6 +24,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 * 4
     }
 }));
+app.use(express.static(`${__dirname}/../build`));
 
 //SOCKET IO
 io.on('connection', socket => {
@@ -65,6 +67,9 @@ app.get('/user/api/ticket/:id', ticketCtrl.readTicket)
 app.post('/user/ticket/comments/new', commentCtrl.newComment)
 app.get('/user/ticket/comments', commentCtrl.ticketComments)
 
+
+
+
 massive({
     connectionString:  CONNECTION_STRING,
     ssl: {
@@ -74,4 +79,8 @@ massive({
 .then(db => {
     app.set('db', db)
     app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`))
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
 })

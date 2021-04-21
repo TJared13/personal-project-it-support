@@ -17,6 +17,11 @@
     transition: 0.25s;
   }
 
+  .userOptions:hover {
+    background-color: #3498db;
+    cursor:pointer;
+  }
+
   .optionContain {
     position: absolute;
     left: 4vw;
@@ -55,16 +60,22 @@
     0% {
       transform: rotateX(-180deg);
       transform-origin: top;
+      transform: scale(0%);
+    }
+    50% {
+      transform: scale(20%);
     }
     100% {
       transform: rotateX(0deg);
       transform-origin: top;
+      transform: scale(100%);
     }
   }
   
 
   .optionButton:hover {
     background-color: #3498db;
+    cursor: pointer;
   }
 
   /* Link {  

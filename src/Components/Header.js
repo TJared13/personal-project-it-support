@@ -4,7 +4,8 @@ import axios from 'axios';
 import userIcon from '../images/user_icon.png';
 import {getUser} from '../redux/reducers/userReducer';
 import {connect} from 'react-redux';
-import '../stylesheets/dash.css';
+import '../stylesheets/header.css';
+import '../stylesheets/userDropdown.css';
 
 function Header() {
     const [viewOptions, setViewOptions] = useState(false);
@@ -27,9 +28,7 @@ function Header() {
 
     
     return (
-        <div className='mainContain' > 
-        <div className='dashContain' >
-            <div className='header' id='img' >                    
+            <div className='header' >                    
                 <h1>WELCOME {user?.username}!</h1>
                 <img src={userIcon} alt='user icon' className='userOptions' onClick={() => setViewOptions(!viewOptions)}/>                      
                 { viewOptions ?
@@ -40,8 +39,6 @@ function Header() {
                 
                 : null 
                 }
-            </div>
-            </div>
             </div>
     )
 }

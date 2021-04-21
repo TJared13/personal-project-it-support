@@ -42,7 +42,7 @@ h1 {
   font-weight: bold;
 }
 
-.dashContain, .header {
+.dashContain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
