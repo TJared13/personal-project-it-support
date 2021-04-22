@@ -4,14 +4,12 @@ import {Link, useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import UserTickets from './ticket/UserTickets';
-import userIcon from '../images/user_icon.png';
 import {getUser} from '../redux/reducers/userReducer';
 import '../stylesheets/dash.css';
 import NewTicket from './ticket/NewTicket';
 import Header from './Header';
 
-const Dashboard = (props) => {
-    // const [ticket, setTicket] = useState();
+const Dashboard = () => {
     const history = useHistory();
     const desktop = useMediaQuery({minWidth: 992})
     const [createTicket, setCreateTicket] = useState(false);

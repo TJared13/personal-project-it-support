@@ -34,8 +34,8 @@ app.use(express.static(`${__dirname}/../build`));
 //     )
 //   );
 io.on('connection', socket => {
-  socket.on('message', ({username, message}) => {
-      io.emit('message', {username, message})
+  socket.on('comment', ({username, comment}) => {
+      io.emit('comment', {username, comment})
 
   })
 });
@@ -58,11 +58,11 @@ app.post('/user/ticket/new', ticketCtrl.newTicket)
 app.get('/user/dash', ticketCtrl.getUserTickets)
 app.get('/admin/dash', auth.adminsOnly, adminCtrl.getAllOpenTickets)
 app.get('/user/ticket/:id', ticketCtrl.readTicket)
-app.delete('/user/ticket/delete')
+app.delete('/user/ticket/delete/:id', ticketCtrl.deleteTicket)
 
 //COMMENT ENDPOINTS
 app.post('/user/ticket/comments/new', commentCtrl.newComment)
-app.get('/user/ticket/comments', commentCtrl.ticketComments)
+app.get('/user/ticket/comments/:id', commentCtrl.ticketComments)
 
 
 

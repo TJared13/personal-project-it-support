@@ -53,10 +53,7 @@ const Register = (props) => {
     )
 };
 
-function mapStateToProps(stateRedux){
-    return stateRedux
-    
+function mapStateToProps(state){
+    return state
 }
-export default connect(mapStateToProps, {updateUser})(Register);  
-
-// export default Register;  
+export default connect(mapStateToProps, {updateUser})(Register);   

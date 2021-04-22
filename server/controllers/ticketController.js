@@ -1,5 +1,3 @@
-// const tickets = [];
-
 module.exports = {
     newTicket: async (req, res) => {
         console.log(req.body)
@@ -27,8 +25,16 @@ module.exports = {
     },
     readTicket: async (req, res) => {
         await req.app.get('db').ticket.read_ticket(req.params.id)
-        // .then(ticket => ticket[req.params.id])
         .then(ticket => ticket[0] ? res.status(200).send(ticket[0]) : res.status(200).send({}))
         .catch(err => console.log(err))
     },
+
+    deleteTicket: async (req, res) => {
+        const db = req.app.get('db');
+        const { id } = req.params;
+        console.log('work', id)
+        
+        const updatedTicketList = await db.ticket.delete_ticket(id)
+        res.status(200).send(updatedTicketList)
+    }
 }
