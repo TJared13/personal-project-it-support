@@ -132,4 +132,7 @@
       width: 80vw;
       height: 35vh;
     }
+    .messages {
+      width: 75vw;
+    }
   }
