@@ -29,7 +29,7 @@ function Header() {
     
     return (
             <div className='header' >                    
-                <h1>WELCOME {user?.username}!</h1>
+                <h1 className='welcome' >WELCOME {user?.username}!</h1>
                 <img src={userIcon} alt='user icon' className='userOptions' onClick={() => setViewOptions(!viewOptions)}/>                      
                 { viewOptions ?
                 <div className='optionContain'>                        

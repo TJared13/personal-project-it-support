@@ -50,3 +50,17 @@ button .link {
 .ticketItems:hover {
     cursor: pointer;
 }
+
+@media (max-width: 480px) {
+    .title {
+      display: none;
+    }
+    .ticketItems {
+        width: 80vw;
+        left: 0vw;
+        right: 20vw;
+    }
+    .openTicket {
+        
+    }
+  }

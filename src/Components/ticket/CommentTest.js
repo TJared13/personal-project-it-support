@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import io from 'socket.io-client';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/reducers/userReducer';
-import {useMediaQuery} from 'react-responsive';
 import {createComment, getUserComments} from '../../redux/reducers/commentReducer';
 import '../../stylesheets/comment.css';
 import axios from 'axios';
@@ -13,7 +12,6 @@ function Comment(props) {
     const [data, setData] = useState({username: '', message: '',})
     const [user, setUser] = useState()
     const [comment, setComment] = useState([])
-    const desktop = useMediaQuery({minWidth: 992})
 
     useEffect(() => {
       axios.get('/auth/session')
@@ -29,8 +27,8 @@ function Comment(props) {
       axios.get('/user/ticket/comments')
         .then((res) => {
           setComment(res.data)
-          props.getUserComments(res.data.comment_id)
-          console.log(res.data.comment_id)
+          props.getUserComments(res.data.ticket_id)
+          console.log(res.data.ticket_id)
         })
     }, [])
 
@@ -76,7 +74,7 @@ function Comment(props) {
             <div>
             <textarea name='message' onChange={e => onTextChange(e)} value={data.message} label="Message" id="outlined-multiline-static" variant='outlined' />
             </div>
-            <button className='send'>{desktop ? <p>Send Message</p> : <p>Send</p>}</button>
+            <button className='submit'>Send Message</button>
         </form>
         <div className='render-chat'>
             <h1 className='chatTitle'>Chat Log</h1>

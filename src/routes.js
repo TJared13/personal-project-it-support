@@ -5,6 +5,7 @@ import Register from './Components/user/Register';
 import Dashboard from './Components/Dashboard';
 import AdminDash from './Components/AdminDash';
 import Ticket from './Components/ticket/Ticket';
+import NewTicket from './Components/ticket/NewTicket';
 import UpdateProfile from './Components/user/UpdateProfile';
 
 export default (
@@ -12,8 +13,9 @@ export default (
         <Route exact path='/' component={Auth} />
         <Route path='/auth/register' component={Register} />
         <Route path='/user/dash' component={Dashboard} />
-        <Route path ='/admin/dash' component ={AdminDash} />
-        <Route path='/user/api/ticket/:id' component={Ticket} />
+        <Route path ='/admin/dash' component={AdminDash} />
+        <Route path ='/user/ticket/new' component={NewTicket} />
+        <Route path='/user/ticket/:id' component={Ticket} />
         <Route path='/user/profile' component={UpdateProfile} />
     </Switch> 
 )

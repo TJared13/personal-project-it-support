@@ -38,16 +38,16 @@ const Register = (props) => {
 
     return (
         <div className='registerUser' >
-            <button className='back' onClick={() => history.push('/')} >&#8678;</button>
+            <button className='backB' onClick={() => history.push('/')} >&#8678;</button>
             <form className='form' >
-                <input type='text' placeholder='First name' name='first_name' onChange={onChange} value={data.first_name}/>
-                <input type='text' placeholder='Last name' name='last_name' onChange={onChange} value={data.last_name} />
-                <input type='date' placeholder='Birthday' name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
-                <input type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
+                <input className='registerField' type='text' placeholder='First name' name='first_name' onChange={onChange} value={data.first_name}/>
+                <input className='registerField' type='text' placeholder='Last name' name='last_name' onChange={onChange} value={data.last_name} />
+                <input className='registerField' type='date' placeholder='Birthday' name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
+                <input className='registerField' type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
                 <input type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
-                <input type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
-                <input type='password' placeholder='Password' name='password' onChange={onChange} value={data.password} />
-                <button type='submit' onClick={(e) => register(e)}>Submit</button>
+                <input className='registerField' type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
+                <input className='registerField' type='password' placeholder='Password' name='password' onChange={onChange} value={data.password} />
+                <button className='submit' type='submit' onClick={(e) => register(e)}>Submit</button>
             </form>
         </div>
     )

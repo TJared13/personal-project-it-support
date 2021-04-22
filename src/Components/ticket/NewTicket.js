@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
+import {useMediaQuery} from 'react-responsive';
 import {connect} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 import {createTicket} from '../../redux/reducers/ticketReducer';
 import axios from 'axios';
+import '../../stylesheets/newTicket.css';
 
 
 const NewTicket = (props) => {
@@ -13,7 +16,8 @@ const NewTicket = (props) => {
         description: '',
         media: null
     })
-    
+    const history = useHistory();
+    const desktop = useMediaQuery({minWidth: 992})
     const [view, setView] = useState(true)
     
 
@@ -36,9 +40,13 @@ const NewTicket = (props) => {
         setData({...data, [e.target.name]: e.target.value})
     }
 
-    const _onButtonClick = () => {
-        setView(false)
+    const onButtonClick = () => {
+        setView(!view)
     };
+
+    const backMobile = () => {
+        history.push('/user/dash')
+    }
 
     return (
         <div>
@@ -47,18 +55,19 @@ const NewTicket = (props) => {
             view ?
 
             <form className='createTicket'>
-            <button to='/user/dash'  className='back' onClick={_onButtonClick} >&#8678;</button>
-                <input type='text' placeholder='Title' onChange={onChange} name='title' value ={data.title} />
-                <select name='category' onChange={onChange} selected>
+            <h1 className='newHeader'>Create New Ticket</h1>
+            <button type='button' className='backBtn'  className='backBtn' onClick={desktop ? onButtonClick : backMobile} >&#8678;</button>
+                <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value ={data.title} />
+                <select className='select' name='category' onChange={onChange} selected>
+                    <option  value='' disabled selected>Please select and option </option>
                     <option name='general' value='general' >General Question</option>
                     <option name='internet' value='internet'>Internet Issue</option>
                     <option name='website' value='website'>Website debugging</option>
                     <option name='suggestion' value='suggestion'>Suggestion</option>
                     <option name='other' value='other'>Other Issue</option>
                 </select>
-                <textarea type='text' placeholder='description' onChange={onChange} name='description' value ={data.description} />
-                <input type='file' placeholder='upload relevant image' onChange={onChange} name='media' value ={data.media} />
-                <button type='submit' onClick={(e) => submitTicket(e)} >Submit Request</button>
+                <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value ={data.description} />
+                <button className='submitTicket' type='submit' onClick={(e) => submitTicket(e)} >Submit Request</button>
             </form>
 
             : null

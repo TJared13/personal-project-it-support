@@ -50,7 +50,7 @@ class Auth extends Component {
         return (
             <div className='loginWrapper' >
                 <form>
-                    <h1>Welcome!</h1>
+                    <h1 className='loginTitle'>Halp Now</h1>
                     <div>
                         <label>Username</label>
                         <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />
@@ -59,7 +59,7 @@ class Auth extends Component {
                     </div>
                     {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
                     <div>
-                    <button onClick={(e) => this.login(e)}>Login</button>
+                    <button className='login' onClick={(e) => this.login(e)}>Login</button>
                     <Link className='register' to='/auth/register'>Register</Link>
                     </div>
                 </form>

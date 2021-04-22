@@ -86,9 +86,8 @@
   span {
     color: white;
   }
-  .submit {
-    background: none;
-    display: block;
+  .send {
+    background: #2ecc71;
     margin: 20px auto;
     text-align: center;
     align-content: center;
@@ -100,7 +99,37 @@
     border-radius: 24px;
   
   }
-  .submit:hover {
+  .send:hover {
       border-color: #3498db;
+      background: #3498db;
       width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      top: 45vh;
+    }
+    .commentForm {
+      width: 80vw;
+    }
+    .send {
+      width: 60px;
+      height: 30px;
+      padding: 0;
+      position: absolute;
+      right: 1.5vw;
+    }
+    .send:hover {
+      color: #3498db;
+      width: 60px;
+    }
+    textarea {
+      width: 60vw;
+      position: relative;
+      right: 8vw;
+    }
+    .render-chat {
+      width: 80vw;
+      height: 35vh;
+    }
   }

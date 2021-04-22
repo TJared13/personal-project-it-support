@@ -3,7 +3,7 @@ import {updateUser, getUser} from '../../redux/reducers/userReducer';
 import {useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import '../../stylesheets/register.css';
+import '../../stylesheets/updateUser.css';
 
 const UpdateProfile = (props) => {
     const history = useHistory();
@@ -46,7 +46,7 @@ const UpdateProfile = (props) => {
 
     return (
         <div className='registerUser' >
-            <button className='back' onClick={() => history.push('/')} >&#8678;</button>
+            <button className='backBn' onClick={() => history.push('/user/dash')} >&#8678;</button>
             <form className='form' >
                 <input type='text' placeholder='First name' name='first_name' onChange={onChange} value={data.first_name}/>
                 <input type='text' placeholder='Last name' name='last_name' onChange={onChange} value={data.last_name} />
@@ -54,7 +54,7 @@ const UpdateProfile = (props) => {
                 <input type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
                 <input type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
                 <input type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
-                <button type='submit' onClick={(e) => updateUser(e)}>Submit</button>
+                <button className="updateUser" type='submit' onClick={(e) => updateUser(e)}>Submit</button>
             </form>
         </div>
     )

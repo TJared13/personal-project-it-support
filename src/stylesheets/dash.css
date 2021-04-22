@@ -1,41 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: sans-serif;
-}
 
-.App, .mainContain {
+.mainContain {
   width: 100vw;
   height: 100vh;
   background-image: url("../images/ornament.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.loginWrapper {
-  width: 50vw;
-  height: 70vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
 
 h1 {
   font-size: 3rem;
@@ -43,29 +17,20 @@ h1 {
 }
 
 .dashContain {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 70vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  max-width: 90vw;
+  height: 90vh;
   max-width: 500px;
   padding: 80px 40px 40px;
   margin-bottom: 5px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   color: white;
-  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
   font-family: sans-serif;
 }
 
@@ -90,7 +55,7 @@ h1 {
   overflow: scroll;
 }
 
-input, button, .register {
+input,  .register {
   background: none;
   display: block;
   margin: 20px auto;
@@ -102,7 +67,6 @@ input, button, .register {
   outline: none;
   color: white;
   border-radius: 24px;
-  -webkit-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -125,9 +89,6 @@ input, button, .register {
   transition: 0.25s;
 }
 
-
-
-
 .back {
   position: absolute;
   top: 0.5vh;
@@ -147,7 +108,7 @@ input, button, .register {
   transition: 0.25s;
 }
 
-input:hover, button:hover, .register:hover {
+input:hover {
   width: 280px;
   border-color: #3498db;
 }
@@ -155,57 +116,23 @@ input:hover, button:hover, .register:hover {
 .back:hover, .newTicket:hover {
   width: 3.5rem;
   height: 3.5rem;
+  border-color: #3498db;
 }
 
-.register {
-  text-decoration: none;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.dashContain, .header {
+.dashContain {
   width: 90vw;
   max-width: 90vw;
   height: 90vh;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  align-items: center;
-  top: 5vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 5vh;
+@media (max-width: 480px) {
+  .userTickets {
+    background-color: transparent;
+    box-shadow: none;
+    overflow: scroll;
+  }
+  .newTicket {
+    top: 5vh;
+  }
 }
 
-.logout {
-  width: 5rem;
-  height: 2rem;
-  text-align: center;
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-/*# sourceMappingURL=dash.css.map */

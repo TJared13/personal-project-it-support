@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {useMediaQuery} from 'react-responsive';
+import {Link, useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import UserTickets from './ticket/UserTickets';
@@ -11,50 +12,40 @@ import Header from './Header';
 
 const Dashboard = (props) => {
     // const [ticket, setTicket] = useState();
+    const history = useHistory();
+    const desktop = useMediaQuery({minWidth: 992})
     const [createTicket, setCreateTicket] = useState(false);
-    const [viewOptions, setViewOptions] = useState(false);
-    const [user, setUser] = useState();  
+    // const [viewOptions, setViewOptions] = useState(false);
+    // const [user, setUser] = useState();  
 
-    useEffect((props) => {
-        axios.get('/auth/session')
-            .then((res) => {
-                setUser(res.data)
-                props.getUser(res.data.user_id)
-            })
-            .catch(err => console.log(err))
-    }, [])
+    // useEffect((props) => {
+    //     axios.get('/auth/session')
+    //         .then((res) => {
+    //             setUser(res.data)
+    //             props.getUser(res.data.user_id)
+    //         })
+    //         .catch(err => console.log(err))
+    // }, [])
 
-    const logout = () => {
-        axios.get('/auth/logout')
-            .then(res => this.props.logout())
-    };
-
-    const _onButtonClick = () => {
+    const createNew = () => {
         setCreateTicket(true)
     };
+
+    const createNewMobile = () => {
+        history.push('/user/ticket/new')
+    }
+
     
 
     
     return (
         <div className='mainContain' > 
             <div className='dashContain' >
-                {/* <div className='header' id='img' >                    
-                    <h1>WELCOME {user?.username}!</h1>
-                    <img src={userIcon} alt='user icon' className='userOptions' onClick={() => setViewOptions(!viewOptions)}/>                      
-                    { viewOptions ?
-                    <div className='optionContain'>                        
-                        <Link to ='/user/profile' className='optionButton'>Profile </Link>
-                        <Link to='/' onClick={() => logout} className='optionButton' >Logout</Link>
-                    </div>
-                    
-                    : null 
-                    }
-                </div> */}
                 <Header />
                 <div className='userTickets' >
                     <UserTickets />         
                 </div>
-                <button onClick={_onButtonClick} className='newTicket'>&#9547;</button>
+                <button onClick={desktop ? createNew : createNewMobile} className='newTicket'>&#9547;</button>
                     {createTicket ?
                     <NewTicket /> :
                     null}

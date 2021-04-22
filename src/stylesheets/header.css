@@ -1,13 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: sans-serif;
-}
 
 
-h1 {
+
+.welcome {
   /* position: relative; */
   margin-bottom: 35px;
   font-size: 3rem;
@@ -46,4 +40,9 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
 }
-/*# sourceMappingURL=dash.css.map */
+@media (max-width: 480px) {
+  .welcome {
+    text-decoration: none;
+    font-size: 18px;
+  }
+}

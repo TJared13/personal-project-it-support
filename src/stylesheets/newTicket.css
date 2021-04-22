@@ -1,0 +1,162 @@
+.createTicket {
+  position: absolute;
+  top: 20vh;
+  right: 15vw;
+  width: 55vw;
+  height: 50vh;
+  padding: 15px 0px;
+  background-color: rgba(172, 172, 172, 0.3);
+  border: 2px solid #8f8f8f;
+  border-radius: 2px;
+  z-index: 1;
+  overflow: scroll;
+  }
+  
+  .form {
+    position: relative;
+    bottom: 6%;
+    align-self: center;
+    width: 60%;
+    height: 80vh;
+  }
+
+  .select {
+    background: rgba(51, 51, 51, 0.5);
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    align-content: center;
+    border: 2px solid #2ecc71;
+    padding: 10px 35px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    }
+
+   
+
+  .newTitle {
+    background-color: rgba(51, 51, 51, 0.5);
+  }
+
+
+
+  .newHeader {
+    font-size: 2rem;
+  }
+
+  .textInput {
+    width: 50vw;
+    background-color: rgba(51, 51, 51, 0.5);
+    border: 2px solid #2ecc71;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+  }
+
+  .textInput::placeholder {
+    text-align: center;
+    align-content: center;
+    padding-top: 30px;
+  }
+
+  .submitTicket {
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  }
+
+  .submitTicket:hover {
+  width: 200px;
+  border-color: #3498db;
+  background-color: #3498db;
+  }
+  
+  .backBtn {
+    position: absolute;
+    left: 2vw;
+    top: 0vh;
+    width: 3rem;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    align-content: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+
+  .backBtn:hover {
+    border-color: #3498db;
+    background-color: #3498db;
+  
+  }
+
+  @media (max-width: 480px) {
+    .createTicket {
+      position: relative;
+      top: 0vh;
+      right: 1vh;
+      height: 90vh;
+      width: 80vw;
+      padding-top: 35px;
+      background: rgba(39, 39, 39, 0.5);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .newHeader {
+      font-size: 1.5rem;
+    }
+
+    .select {
+      background-color: (51, 51, 51, 0.5);
+    }
+    .textInput {
+      height: 10vh;
+      width: 70vw;
+      position: relative;
+      left: 0vw;
+    }
+
+    .textInput::placeholder {
+      text-align: center;
+      align-content: center;
+      color: rgb(141, 141, 141);
+      padding-top: 20px;
+    }
+    .backBtn {
+      position: absolute;
+      left: 5vw;
+      top: 0vh;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 1px;
+      z-index: 1;
+      }
+    .backBtn:hover {
+      width: 3rem;
+      border-color: #3498db;
+    }
+
+    .backBtn {
+      background: #2ecc71;
+    }
+    
+  }
