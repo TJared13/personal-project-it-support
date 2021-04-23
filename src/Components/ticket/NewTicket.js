@@ -56,7 +56,7 @@ const NewTicket = (props) => {
 
             <form className='createTicket'>
             <h1 className='newHeader'>Create New Ticket</h1>
-            <button type='button' className='backBtn'  className='backBtn' onClick={desktop ? onButtonClick : backMobile} >&#8678;</button>
+            <button type='button' className='backBtn'  onClick={desktop ? onButtonClick : backMobile} >&#8678;</button>
                 <input className='newTitle' type='text' placeholder='Title' onChange={onChange} name='title' value ={data.title} />
                 <select className='select' name='category' onChange={onChange} selected>
                     <option  value='' disabled selected>Please select and option </option>
