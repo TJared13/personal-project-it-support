@@ -1,2 +1,2 @@
-INSERT INTO ticket_comment (user_id, message)
+INSERT INTO ticket_comment (user_id, comment)
 VALUES ($1, $2);

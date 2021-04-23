@@ -49,21 +49,7 @@ const Ticket = (props) => {
     const goBack = () => {
         history.push('/user/dash')
     }
-
-    // const deleteTicket = (id) => {
-    //     // const {ticketId} = props;
-    //     // const id = ticketId;
-    //     console.log('hello')
-    //      axios.delete(`/user/ticket/delete/${id}`)
-    //      .then(() => {
-    //          alert('Ticket has successfully been deleted')
-    //          closeView();
-    //          history.push('/user/dash')
-    //      })
-    //  }
-
     
-    console.log(ticket.ticket_id)
     return (
         <div className='background' >
         { view ?
