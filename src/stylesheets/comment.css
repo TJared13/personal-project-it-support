@@ -26,6 +26,13 @@
   textarea {
       width: 30vw;
       height: 8vh;
+      padding: 5px;
+      background-color: rgba(172, 172, 172, 0.3);
+      border: 2px solid #8f8f8f;
+      border-radius: 2px;
+      box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);  
+      color: white;
+      font-size: 16px;
       overflow: scroll;
   }
   
@@ -127,6 +134,7 @@
       width: 60vw;
       position: relative;
       right: 8vw;
+      margin-right: 5px;
     }
     .render-chat {
       width: 80vw;

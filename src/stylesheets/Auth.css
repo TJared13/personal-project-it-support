@@ -33,7 +33,7 @@ div {
   align-items: center;
 }
 
-input, .login, .register {
+.userInput, .login, .register {
   background: none;
   display: block;
   margin: 20px auto;
@@ -47,7 +47,7 @@ input, .login, .register {
   transition: 0.25s;
 }
 
-input:hover, .login:hover, .register:hover {
+.userInput:hover, .login:hover, .register:hover {
   width: 280px;
   border-color: #3498db;
 }
@@ -71,7 +71,8 @@ input:hover, .login:hover, .register:hover {
     height: 85vh;
     width: 75vw;
   }
-  input:hover {
-    width: 150px;
+
+  .userInput:focus, .login:focus, .register:focus {
+    width: 60vw;
   }
 }

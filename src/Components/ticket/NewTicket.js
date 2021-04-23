@@ -67,7 +67,7 @@ const NewTicket = (props) => {
                     <option name='other' value='other'>Other Issue</option>
                 </select>
                 <textarea className='textInput' type='text' placeholder='description' onChange={onChange} name='description' value ={data.description} />
-                <button className='submitTicket' type='submit' onClick={(e) => submitTicket(e)} >Submit Request</button>
+                <button className='submitTicket' type='submit' onClick={desktop ? (e) => submitTicket(e) : backMobile} >Submit Request</button>
             </form>
 
             : null

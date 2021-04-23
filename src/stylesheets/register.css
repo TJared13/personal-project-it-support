@@ -70,19 +70,32 @@
       padding-top: 30px;
     }
     .registerField {
-
       margin: 5px auto;
     }
+
+    .registerField:focus {
+      width: 60vw;
+    }
+   
     .backB {
       position: absolute;
       left: 12vw;
       top: 3vh;
-      width: 3rem;
+      background-color: #2ecc71;
       z-index: 1;
       }
     .backB:hover {
-      width: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
       border-color: #3498db;
+    }
+    .submit {
+      border: 2px solid #2ecc71;
+      background-color: #2ecc7068;
+      
+    }
+    .submit:focus {
+      background-color: #2ecc7068;
     }
     
   }

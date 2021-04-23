@@ -70,12 +70,11 @@ const Ticket = (props) => {
             <div>
             <div className='ticketContain'>
                 <span className='closeTicket' onClick={desktop ? closeView : goBack} >&#8678;</span>
-                <img src={trash} alt='trash-icon' className='delete' onClick={() => props.deleteTicket(ticket.ticket_id)}/>
+                <img src={trash} alt='trash-icon' className='delete' onClick={() => {props.deleteTicket(ticket.ticket_id); closeView()}} />
                 <h1 className='ticketData' >{ticket.date}</h1>
                 <h1 className='ticketData' >{ticket.title}</h1>
                 <h1 className='ticketData' >{ticket.category}</h1>
-                <h1 className='ticketData' >{ticket.description}</h1>
-                {/* <h1 className='ticketData' >{ticket.media}</h1> */}
+                <h1 className='ticketDescription' >{ticket.description}</h1>
                 <Comment ticketId={ticket.ticket_id} />
             </div>
             </div>

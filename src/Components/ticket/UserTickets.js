@@ -41,7 +41,6 @@ const UserTickets = (props) => {
          axios.delete(`/user/ticket/delete/${id}`)
          .then(() => {
              alert('Ticket has successfully been deleted')
-            //  closeView();
              history.push('/user/dash')
          })
      }

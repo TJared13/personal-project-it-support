@@ -44,7 +44,7 @@ const Register = (props) => {
                 <input className='registerField' type='text' placeholder='Last name' name='last_name' onChange={onChange} value={data.last_name} />
                 <input className='registerField' type='date' placeholder='Birthday' name='birthday' onChange={e => setData({...data, [e.target.name]: e.target.value})}value={data.birthday} />
                 <input className='registerField' type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
-                <input type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
+                <input className='registerField' type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
                 <input className='registerField' type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
                 <input className='registerField' type='password' placeholder='Password' name='password' onChange={onChange} value={data.password} />
                 <button className='submit' type='submit' onClick={(e) => register(e)}>Submit</button>

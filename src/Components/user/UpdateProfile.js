@@ -45,7 +45,7 @@ const UpdateProfile = (props) => {
 
 
     return (
-        <div className='registerUser' >
+        <div className='updateUser' >
             <button className='backBn' onClick={() => history.push('/user/dash')} >&#8678;</button>
             <form className='form' >
                 <input type='text' placeholder='First name' name='first_name' onChange={onChange} value={data.first_name}/>
@@ -54,7 +54,7 @@ const UpdateProfile = (props) => {
                 <input type='email' placeholder='Email address' name='email' onChange={onChange} value={data.email} />
                 <input type='tel' placeholder='Telephone number'  name='phone_number' onChange={onChange} value={data.phone_number} />
                 <input type='text' placeholder='Username' name='username' onChange={onChange} value={data.username} />
-                <button className="updateUser" type='submit' onClick={(e) => updateUser(e)}>Submit</button>
+                <button className="updateUserBtn" type='submit' onClick={(e) => updateUser(e)}>Submit</button>
             </form>
         </div>
     )

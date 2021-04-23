@@ -26,6 +26,5 @@ CREATE TABLE ticket_comment (
 comment_id SERIAL PRIMARY KEY,
 user_id SERIAL REFERENCES user_info(user_id),
 ticket_id SERIAL REFERENCES user_ticket(ticket_id),
-date DATE NOT NULL,
-comment VARCHAR(3000) NOT NULL
+message VARCHAR(3000) NOT NULL
 );
