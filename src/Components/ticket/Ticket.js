@@ -22,22 +22,19 @@ const Ticket = (props) => {
     })
 
     const history = useHistory();
+
     const desktop = useMediaQuery({minWidth: 992})
-    
 
     const [view, setView] = useState(true)
-    // const history = useHistory();
 
     useEffect(() => {
         if (props.match){
         axios.get(`/user/ticket/${props.match.params.id}`)
             .then(res =>{
                 setTicket(res.data)
-                // console.log(res.data)
             })} else {
                 axios.get(`/user/ticket/${props.ticketId}`)
                 .then(res =>{
-                    // console.log(res.data)
                     setTicket(res.data)
                 })
             }

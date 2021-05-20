@@ -50,7 +50,7 @@ class Auth extends Component {
         return (
             <div className='loginWrapper' >
                 <form>
-                    <h1 className='loginTitle'>Halp Now</h1>
+                    <h1 className='loginTitle'>Halp Now!</h1>
                     <div>
                         <label>Username</label>
                         <input className='userInput' value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />
