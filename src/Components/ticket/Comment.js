@@ -58,7 +58,6 @@ function Comment(props) {
     setData({message:'', username:''})
   }
 
-
   
     
     const renderChat = () => {

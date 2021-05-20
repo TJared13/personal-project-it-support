@@ -46,9 +46,9 @@
   transition: 0.25s;
   }
 
-  .submit:hover {
+ .updateUserBtn:hover {
   width: 280px;
-  border-color: #3498db;
+  background-color: #3498db;
   }
   
   .backBn {
@@ -68,6 +68,10 @@
     border-radius: 24px;
     transition: 0.25s;
   
+  }
+
+  .backBn:hover {
+    background-color: #3498db;
   }
 
   @media (max-width: 480px) {
